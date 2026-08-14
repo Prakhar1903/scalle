@@ -4,7 +4,7 @@
   align-items: center;
   padding: 12px 20px;
   border-top: 1px solid var(--aws-border);
-  background-color: #fafafa;
+  background-color: var(--aws-hover-bg);
   gap: 24px;
 }
 
@@ -25,7 +25,7 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  background-color: #fff;
+  background-color: var(--aws-btn-secondary-bg);
   border: 1px solid var(--aws-border-dark);
   border-radius: 2px;
   color: var(--aws-text-primary);
@@ -41,7 +41,7 @@
 .button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  background-color: #f8f8f8;
+  background-color: var(--aws-hover-bg);
 }
 
 .sizeSelector {
@@ -56,7 +56,8 @@
   padding: 4px;
   border: 1px solid var(--aws-border-dark);
   border-radius: 2px;
-  background-color: #fff;
+  background-color: var(--aws-btn-secondary-bg);
+  color: var(--aws-text-primary);
   outline: none;
 }
 

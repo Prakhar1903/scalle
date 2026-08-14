@@ -11,7 +11,7 @@
 
 .toast {
   pointer-events: auto; /* Re-enable clicks on the toast itself */
-  background: white;
+  background: var(--aws-btn-secondary-bg);
   min-width: 300px;
   max-width: 400px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
