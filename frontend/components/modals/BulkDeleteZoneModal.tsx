@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import styles from "./modal.module.css";
+import styles from "./modals.module.css";
 import api from "@/lib/api";
 import { HostedZone } from "@/types";
 import { useToastStore } from "@/lib/toastStore";
