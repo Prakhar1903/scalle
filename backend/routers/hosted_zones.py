@@ -98,7 +98,15 @@ def create_hosted_zone(
     db.add(soa_record)
     db.commit()
     
-    return {**new_zone.__dict__, "record_count": 2}
+    return {
+        "id": new_zone.id,
+        "name": new_zone.name,
+        "type": new_zone.type,
+        "comment": new_zone.comment,
+        "created_at": new_zone.created_at,
+        "updated_at": new_zone.updated_at,
+        "record_count": 2
+    }
 
 @router.get("/{zone_id}", response_model=schemas.HostedZoneResponse)
 def get_hosted_zone(
@@ -120,7 +128,15 @@ def get_hosted_zone(
         raise HTTPException(status_code=404, detail="Hosted zone not found")
         
     zone, count = zone_with_count
-    return {**zone.__dict__, "record_count": count}
+    return {
+        "id": zone.id,
+        "name": zone.name,
+        "type": zone.type,
+        "comment": zone.comment,
+        "created_at": zone.created_at,
+        "updated_at": zone.updated_at,
+        "record_count": count
+    }
 
 @router.put("/{zone_id}", response_model=schemas.HostedZoneResponse)
 def update_hosted_zone(
@@ -144,7 +160,15 @@ def update_hosted_zone(
     db.refresh(zone)
     
     record_count = db.query(models.DNSRecord).filter(models.DNSRecord.hosted_zone_id == zone.id).count()
-    return {**zone.__dict__, "record_count": record_count}
+    return {
+        "id": zone.id,
+        "name": zone.name,
+        "type": zone.type,
+        "comment": zone.comment,
+        "created_at": zone.created_at,
+        "updated_at": zone.updated_at,
+        "record_count": record_count
+    }
 
 @router.delete("/{zone_id}")
 def delete_hosted_zone(
