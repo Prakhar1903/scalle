@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import styles from "./modals.module.css";
+import btnStyles from "@/app/(console)/hosted-zones/hosted-zones.module.css";
 import api from "@/lib/api";
 import { HostedZone } from "@/types";
 import { useToastStore } from "@/lib/toastStore";
@@ -65,15 +66,15 @@ export default function BulkDeleteZoneModal({ zones, onClose, onSuccess }: BulkD
 
   return (
     <div className={styles.overlay}>
-      <div className={styles.modal} style={{ maxWidth: '500px' }}>
+      <div className={styles.modalCenter}>
         <div className={styles.header}>
           <h2 className={styles.title}>Delete {zones.length} hosted zones?</h2>
-          <button className={styles.closeBtn} onClick={onClose}><X size={20} /></button>
+          <button className={styles.closeButton} onClick={onClose}><X size={20} /></button>
         </div>
         
         <div className={styles.body}>
-          <div className={styles.alertWarning} style={{ display: 'flex', gap: '12px', padding: '12px', backgroundColor: 'rgba(236,114,17,0.1)', borderLeft: '4px solid #ec7211', marginBottom: '16px' }}>
-            <AlertTriangle color="#ec7211" size={24} style={{ flexShrink: 0 }} />
+          <div className={styles.warningBox} style={{ display: 'flex', gap: '12px', padding: '12px', marginBottom: '16px' }}>
+            <AlertTriangle color="var(--aws-error)" size={24} style={{ flexShrink: 0 }} />
             <div style={{ fontSize: '13px' }}>
               <strong>Warning:</strong> This will permanently delete the following zones and ALL their associated DNS records. This action cannot be undone.
             </div>
@@ -102,11 +103,12 @@ export default function BulkDeleteZoneModal({ zones, onClose, onSuccess }: BulkD
         </div>
         
         <div className={styles.footer}>
-          <button className={styles.btnSecondary} onClick={onClose} disabled={isDeleting}>
+          <button className={btnStyles.buttonSecondary} onClick={onClose} disabled={isDeleting}>
             Cancel
           </button>
           <button 
-            className={styles.btnPrimary} 
+            className={btnStyles.buttonPrimary} 
+            style={{ backgroundColor: 'var(--aws-error)', borderColor: 'var(--aws-error)', color: '#fff' }}
             onClick={handleDelete} 
             disabled={!isConfirmed || isDeleting}
           >
