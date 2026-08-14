@@ -1,0 +1,5 @@
+venv/
+__pycache__/
+*.pyc
+.env
+route53.db
