@@ -50,15 +50,19 @@ def login(login_req: schemas.LoginRequest, response: Response, db: Session = Dep
         value=f"Bearer {access_token}",
         httponly=True,
         max_age=auth.ACCESS_TOKEN_EXPIRE_MINUTES * 60,
-        samesite="lax",
-        secure=False, # set to true in prod with https
+        samesite="none",
+        secure=True,
     )
     
     return {"message": "Login successful"}
 
 @router.post("/logout")
 def logout(response: Response):
-    response.delete_cookie("access_token")
+    response.delete_cookie(
+        key="access_token",
+        samesite="none",
+        secure=True
+    )
     return {"message": "Logout successful"}
 
 @router.get("/me", response_model=schemas.UserResponse)
