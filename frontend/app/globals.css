@@ -1,0 +1,106 @@
+:root {
+  /* AWS Route53 Color Palette */
+  --aws-squid-ink: #232f3e;
+  --aws-orange: #ff9900;
+  --aws-bg-body: #f2f3f3;
+  --aws-bg-sidebar: #232f3e;
+  --aws-text-primary: #16191f;
+  --aws-text-secondary: #545b64;
+  --aws-border: #eaeded;
+  --aws-border-dark: #879596;
+  --aws-link: #0073bb;
+  --aws-link-hover: #003666;
+  --aws-btn-primary-bg: #ff9900;
+  --aws-btn-primary-hover: #ec7211;
+  --aws-btn-primary-text: #16191f;
+  --aws-btn-secondary-bg: #ffffff;
+  --aws-btn-secondary-border: #545b64;
+  --aws-btn-secondary-hover: #fafafa;
+  
+  --aws-success: #1d8102;
+  --aws-success-bg: #f2f8f2;
+  --aws-success-border: #1d8102;
+  
+  --aws-error: #d13212;
+  --aws-error-bg: #fdf3f1;
+  --aws-error-border: #d13212;
+
+  --aws-hover-bg: #f9f9f9;
+  
+  --aws-font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+}
+
+[data-theme="dark"] {
+  --aws-squid-ink: #1a2332;
+  --aws-bg-body: #0f1923;
+  --aws-text-primary: #e8e8e8;
+  --aws-text-secondary: #9ba7b4;
+  --aws-border: #2d3a45;
+  --aws-border-dark: #4a5568;
+  --aws-hover-bg: #1e2d3d;
+  --aws-link: #4db8ff;
+  --aws-link-hover: #82cfff;
+  --aws-btn-primary-bg: #ec7211;
+  --aws-btn-primary-text: #ffffff;
+  --aws-btn-secondary-bg: #1e2d3d;
+  --aws-btn-secondary-border: #4a5568;
+  --aws-btn-secondary-hover: #2d3a45;
+  --aws-error: #ff6b4a;
+  --aws-error-bg: #331914;
+  --aws-success: #4caf50;
+  --aws-success-bg: #142816;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--aws-font-family);
+  background-color: var(--aws-bg-body);
+  color: var(--aws-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+a {
+  color: var(--aws-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--aws-link-hover);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--aws-text-primary);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+/* AWS Checkbox styling */
+input[type="checkbox"] {
+  accent-color: var(--aws-link);
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}

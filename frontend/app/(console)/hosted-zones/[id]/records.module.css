@@ -1,0 +1,68 @@
+.zoneInfoCard {
+  background-color: #fff;
+  border: 1px solid var(--aws-border);
+  border-radius: 2px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 1px 1px 0 rgba(0, 28, 36, 0.05);
+}
+
+.zoneInfoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.zoneInfoItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.zoneInfoLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--aws-text-secondary);
+}
+
+.zoneInfoValue {
+  font-size: 14px;
+  color: var(--aws-text-primary);
+  word-break: break-all;
+}
+
+.typeFilter {
+  padding: 4px 8px;
+  border: 1px solid var(--aws-border-dark);
+  border-radius: 2px;
+  background-color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.typeFilter:focus {
+  border-color: var(--aws-link);
+  box-shadow: 0 0 0 2px rgba(0, 115, 187, 0.2);
+}
+
+.valueList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.valueItem {
+  font-family: monospace;
+  font-size: 12px;
+  background-color: #f8f8f8;
+  padding: 2px 4px;
+  border-radius: 2px;
+  border: 1px solid #eaeded;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.recordTypeBadge {
+  font-weight: 700;
+  font-size: 12px;
+}

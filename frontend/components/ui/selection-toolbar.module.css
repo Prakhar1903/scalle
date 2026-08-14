@@ -1,0 +1,75 @@
+.toolbarContainer {
+  position: relative;
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--aws-link, #0073bb);
+  color: #ffffff;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  animation: slideDown 0.2s ease-out forwards;
+}
+
+.toolbar.hidden {
+  display: none;
+}
+
+.selectionText {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.btnSecondary {
+  background: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btnPrimary {
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: var(--aws-link, #0073bb);
+  padding: 4px 12px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btnPrimary:hover {
+  background: #f2f3f3;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

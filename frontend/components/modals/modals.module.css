@@ -1,0 +1,128 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.slideInPanel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 500px;
+  background-color: #fff;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+  animation: slideIn 0.2s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.modalCenter {
+  background-color: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1001;
+}
+
+.header {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--aws-border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--aws-text-secondary);
+}
+
+.closeButton:hover {
+  color: var(--aws-text-primary);
+}
+
+.body {
+  padding: 24px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--aws-border);
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  background-color: #fafafa;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 12px;
+  color: var(--aws-text-secondary);
+  margin-bottom: 8px;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--aws-border-dark);
+  border-radius: 2px;
+  outline: none;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: var(--aws-link);
+  box-shadow: 0 0 0 2px rgba(0, 115, 187, 0.2);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.warningBox {
+  background-color: #fdf3f1;
+  border-left: 4px solid var(--aws-error);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.warningBox h4 {
+  margin-top: 0;
+  color: var(--aws-error);
+}
