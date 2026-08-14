@@ -1,5 +1,5 @@
 .zoneInfoCard {
-  background-color: #fff;
+  background-color: var(--aws-btn-secondary-bg);
   border: 1px solid var(--aws-border);
   border-radius: 2px;
   padding: 16px 20px;
@@ -35,7 +35,8 @@
   padding: 4px 8px;
   border: 1px solid var(--aws-border-dark);
   border-radius: 2px;
-  background-color: #fff;
+  background-color: var(--aws-btn-secondary-bg);
+  color: var(--aws-text-primary);
   font-size: 14px;
   outline: none;
 }
@@ -54,12 +55,13 @@
 .valueItem {
   font-family: monospace;
   font-size: 12px;
-  background-color: #f8f8f8;
+  background-color: var(--aws-hover-bg);
   padding: 2px 4px;
   border-radius: 2px;
-  border: 1px solid #eaeded;
+  border: 1px solid var(--aws-border);
   white-space: pre-wrap;
   word-break: break-all;
+  color: var(--aws-text-primary);
 }
 
 .recordTypeBadge {
