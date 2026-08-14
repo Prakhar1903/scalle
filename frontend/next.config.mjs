@@ -3,6 +3,14 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://scalle.onrender.com/:path*',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
