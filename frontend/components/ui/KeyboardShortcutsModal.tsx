@@ -2,7 +2,7 @@
 
 import React from "react";
 import { X } from "lucide-react";
-import styles from "../modals/modal.module.css";
+import styles from "../modals/modals.module.css";
 
 interface KeyboardShortcutsModalProps {
   onClose: () => void;

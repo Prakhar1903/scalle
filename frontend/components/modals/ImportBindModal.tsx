@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import styles from "./modal.module.css";
+import styles from "./modals.module.css";
 import api from "@/lib/api";
 import { useToastStore } from "@/lib/toastStore";
 import { Upload, X } from "lucide-react";
