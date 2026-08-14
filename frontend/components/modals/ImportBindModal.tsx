@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import styles from "./modals.module.css";
+import btnStyles from "@/app/(console)/hosted-zones/hosted-zones.module.css";
 import api from "@/lib/api";
 import { useToastStore } from "@/lib/toastStore";
 import { Upload, X } from "lucide-react";
@@ -76,10 +77,10 @@ export default function ImportBindModal({ zoneId, onClose, onSuccess }: ImportBi
 
   return (
     <div className={styles.overlay}>
-      <div className={styles.modal} style={{ maxWidth: '500px' }}>
+      <div className={styles.modalCenter}>
         <div className={styles.header}>
           <h2 className={styles.title}>Import zone file</h2>
-          <button className={styles.closeBtn} onClick={onClose}><X size={20} /></button>
+          <button className={styles.closeButton} onClick={onClose}><X size={20} /></button>
         </div>
         
         <div className={styles.body}>
@@ -161,11 +162,11 @@ export default function ImportBindModal({ zoneId, onClose, onSuccess }: ImportBi
         <div className={styles.footer}>
           {!result ? (
             <>
-              <button className={styles.btnSecondary} onClick={onClose} disabled={isUploading}>
+              <button className={btnStyles.buttonSecondary} onClick={onClose} disabled={isUploading}>
                 Cancel
               </button>
               <button 
-                className={styles.btnPrimary} 
+                className={btnStyles.buttonPrimary} 
                 onClick={handleImport} 
                 disabled={!file || isUploading}
               >
@@ -173,7 +174,7 @@ export default function ImportBindModal({ zoneId, onClose, onSuccess }: ImportBi
               </button>
             </>
           ) : (
-            <button className={styles.btnPrimary} onClick={() => {
+            <button className={btnStyles.buttonPrimary} onClick={() => {
               if (result.imported > 0) onSuccess();
               else onClose();
             }}>
