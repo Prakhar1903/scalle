@@ -14,7 +14,7 @@ export const useThemeStore = create<ThemeState>((set, get) => ({
     document.documentElement.dataset.theme = newTheme;
     try {
       localStorage.setItem('theme', newTheme);
-    } catch (e) {}
+    } catch {}
   },
   initTheme: () => {
     try {
@@ -23,6 +23,6 @@ export const useThemeStore = create<ThemeState>((set, get) => ({
         set({ theme: 'dark' });
         document.documentElement.dataset.theme = 'dark';
       }
-    } catch (e) {}
+    } catch {}
   }
 }));

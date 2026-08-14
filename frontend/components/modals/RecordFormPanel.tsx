@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { X, Plus, Trash2 } from "lucide-react";
 import styles from "./modals.module.css";
 import btnStyles from "@/app/(console)/hosted-zones/hosted-zones.module.css";
@@ -105,6 +105,7 @@ export default function RecordFormPanel({ zoneId, zoneName, existingRecord, onCl
         addToast("Record created successfully", "success");
       }
       onSuccess();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.detail || `Failed to ${isEditing ? 'update' : 'create'} record`);
       setIsLoading(false);

@@ -29,6 +29,7 @@ export default function EditZoneModal({ zone, onClose, onSuccess }: EditZoneModa
       await api.put(`/hosted-zones/${zone.id}`, { comment });
       addToast("Hosted zone updated successfully", "success");
       onSuccess();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.detail || "Failed to update hosted zone");
       setIsLoading(false);

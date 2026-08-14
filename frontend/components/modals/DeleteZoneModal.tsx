@@ -33,6 +33,7 @@ export default function DeleteZoneModal({ zone, onClose, onSuccess }: DeleteZone
       await api.delete(`/hosted-zones/${zone.id}`);
       addToast("Hosted zone deleted", "success");
       onSuccess();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (err: any) {
       setError(err.response?.data?.detail || "Failed to delete hosted zone");
       setIsLoading(false);
